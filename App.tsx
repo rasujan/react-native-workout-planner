@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 
-import Navigation from "./navigation";
+import Navigation from "./src/navigation";
 
 export default function App() {
   return (
