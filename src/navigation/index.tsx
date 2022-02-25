@@ -12,7 +12,11 @@ const Tab = createBottomTabNavigator();
 const RootNavigator = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="root" component={TabNavigator} />
+      <Stack.Screen
+        name="root"
+        component={TabNavigator}
+        options={{ headerShown: false }}
+      />
     </Stack.Navigator>
   );
 };
