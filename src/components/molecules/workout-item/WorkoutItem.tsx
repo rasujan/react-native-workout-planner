@@ -23,9 +23,12 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 20,
+    fontFamily: "nunito",
   },
   subtitle: {
-    fontSize: 16,
+    fontSize: 18,
+    fontFamily: "nunito-bold",
+    fontWeight: "700",
   },
 });
 
