@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { StyleSheet, View } from "react-native";
 import { StatusBar } from "expo-status-bar";
 
 import Navigation from "~/navigation";
@@ -18,11 +17,5 @@ const App = () => {
     return null;
   }
 };
-
-const styles = StyleSheet.create({
-  container: {
-    // fontFamily: "nunito",
-  },
-});
 
 export default App;
