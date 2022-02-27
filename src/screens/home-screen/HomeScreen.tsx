@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View, SafeAreaView, FlatList } from "react-native";
+import { StyleSheet, View, SafeAreaView, FlatList } from "react-native";
 import { NativeStackHeaderProps } from "@react-navigation/native-stack";
 
 import { WorkoutItem } from "~/components/molecules";
@@ -39,6 +39,7 @@ const styles = StyleSheet.create({
     color: colors.kindaBlack,
     fontSize: 18,
     textAlign: "left",
+    // fontFamily: "nunito",
   },
 });
 export default HomeScreen;
