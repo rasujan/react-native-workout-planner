@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 
-import Navigation from "~/navigation";
+import { AppNavigation } from "~/navigation";
 import { useCachedResources } from "~/hooks";
 
 const App = () => {
@@ -9,7 +9,7 @@ const App = () => {
   if (isResourcesLoaded) {
     return (
       <>
-        <Navigation />
+        <AppNavigation />
         <StatusBar style="auto" />
       </>
     );

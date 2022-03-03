@@ -17,7 +17,11 @@ import colors from "~/constants/colors";
 const HomeScreen = ({ navigation }: NativeStackHeaderProps) => {
   const PressAbleItem = ({ item }: { item: Workout }) => {
     return (
-      <Pressable onPress={() => alert(item.name)}>
+      <Pressable
+        onPress={() =>
+          navigation.navigate("WorkoutDetail", { slug: item.slug })
+        }
+      >
         <WorkoutItem item={item} />
       </Pressable>
     );
