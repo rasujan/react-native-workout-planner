@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import * as Font from "expo-font"
+import { initWorkoutData } from "~/storage";
+import * as Font from "expo-font";
 
-import { storeData, getData, containsKey } from '~/storage';
-import data from "~/data/data.json"
+import { storeData, containsKey } from "~/storage";
+import data from "~/data/data.json";
 
 const useCachedResources = () => {
     const [isLoadingComplete, setIsLoadingComplete] = useState(false);
@@ -10,25 +11,22 @@ const useCachedResources = () => {
     useEffect(() => {
         const loadResourcesAndDateAsync = async () => {
             try {
-                const hasWorkouts = await containsKey("workout-data")
-                if (!hasWorkouts) {
-                    await storeData("workout-data", data)
-                }
+                await initWorkoutData();
                 await Font.loadAsync({
-                    "nunito": require("../../assets/Nunito-Regular.ttf"),
-                    "nunito-bold": require("../../assets/Nunito-Regular.ttf")
-                })
+                    nunito: require("../../assets/Nunito-Regular.ttf"),
+                    "nunito-bold": require("../../assets/Nunito-Regular.ttf"),
+                });
             } catch (error) {
-                console.error(error)
+                console.error(error);
             } finally {
-                setIsLoadingComplete(true)
+                setIsLoadingComplete(true);
             }
-        }
+        };
 
-        loadResourcesAndDateAsync()
-    }, [])
+        loadResourcesAndDateAsync();
+    }, []);
 
     return isLoadingComplete;
-}
+};
 
 export default useCachedResources;
