@@ -6,27 +6,27 @@ import { storeData, containsKey } from "~/storage";
 import data from "~/data/data.json";
 
 const useCachedResources = () => {
-    const [isLoadingComplete, setIsLoadingComplete] = useState(false);
+  const [isLoadingComplete, setIsLoadingComplete] = useState(false);
 
-    useEffect(() => {
-        const loadResourcesAndDateAsync = async () => {
-            try {
-                await initWorkoutData();
-                await Font.loadAsync({
-                    nunito: require("../../assets/Nunito-Regular.ttf"),
-                    "nunito-bold": require("../../assets/Nunito-Regular.ttf"),
-                });
-            } catch (error) {
-                console.error(error);
-            } finally {
-                setIsLoadingComplete(true);
-            }
-        };
+  useEffect(() => {
+    const loadResourcesAndDateAsync = async () => {
+      try {
+        await initWorkoutData();
+        await Font.loadAsync({
+          nunito: require("../../assets/Nunito-Regular.ttf"),
+          nunitoBold: require("../../assets/Nunito-Regular.ttf"),
+        });
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setIsLoadingComplete(true);
+      }
+    };
 
-        loadResourcesAndDateAsync();
-    }, []);
+    loadResourcesAndDateAsync();
+  }, []);
 
-    return isLoadingComplete;
+  return isLoadingComplete;
 };
 
 export default useCachedResources;
