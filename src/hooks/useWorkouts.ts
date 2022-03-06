@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useIsFocused } from "@react-navigation/native";
 
-// import getWorkouts from '~/storage/getWorkouts';
+import { getWorkouts } from "~/storage";
+
 import { Workout } from "~/types/data";
 
 const useWorkouts = () => {
@@ -10,8 +11,8 @@ const useWorkouts = () => {
 
   useEffect(() => {
     async function getData() {
-      /* const _workouts = await getWorkouts();
-            setWorkouts(_workouts) */
+      const _workouts = await getWorkouts();
+      setWorkouts(_workouts);
     }
 
     if (isFocused) {

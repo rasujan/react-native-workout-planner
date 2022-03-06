@@ -18,6 +18,7 @@
     "babel-plugin-styled-components": "^2.0.3",
     "expo": "~44.0.0",
     "expo-status-bar": "~1.2.0",
+    "lodash": "^4.17.21",
     "moment": "^2.29.1",
     "react": "17.0.1",
     "react-dom": "17.0.1",
@@ -28,6 +29,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
+    "@types/lodash": "^4.14.179",
     "@types/moment-duration-format": "^2.2.3",
     "@types/react": "~17.0.21",
     "@types/react-native": "~0.64.12",
