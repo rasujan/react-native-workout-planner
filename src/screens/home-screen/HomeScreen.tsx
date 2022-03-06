@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   StyleSheet,
   View,
@@ -9,15 +9,21 @@ import {
 import { NativeStackHeaderProps } from "@react-navigation/native-stack";
 
 import { WorkoutItem } from "~/components/molecules";
-
-import data from "~/data/data.json";
 import { Workout } from "~/types/data";
+
 import colors from "~/constants/colors";
+import useWorkouts from "~/hooks/useWorkouts";
 
 const HomeScreen = ({ navigation }: NativeStackHeaderProps) => {
+  const workouts = useWorkouts();
+
   const PressAbleItem = ({ item }: { item: Workout }) => {
     return (
-      <Pressable onPress={() => alert(item.name)}>
+      <Pressable
+        onPress={() =>
+          navigation.navigate("WorkoutDetail", { slug: item.slug })
+        }
+      >
         <WorkoutItem item={item} />
       </Pressable>
     );
@@ -27,7 +33,7 @@ const HomeScreen = ({ navigation }: NativeStackHeaderProps) => {
     <View style={styles.container}>
       <SafeAreaView style={styles.safeAreaContainer}>
         <FlatList
-          data={data as unknown as Workout[]}
+          data={workouts as unknown as Workout[]}
           renderItem={PressAbleItem}
           keyExtractor={(item) => item.slug}
         />

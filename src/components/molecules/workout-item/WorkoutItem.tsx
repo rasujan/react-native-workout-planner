@@ -1,19 +1,19 @@
-import react from "react";
+import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import * as moment from "moment";
 import momentDurationFormatSetup from "moment-duration-format";
 momentDurationFormatSetup(moment);
 
+import { formatSec } from "~/utils/utils";
+
 import { Workout } from "~/types/data";
 import colors from "~/constants/colors";
 
 const WorkoutItem = ({ item }: { item: Workout }) => {
-  var seconds = item.duration;
-  var duration = moment.duration(seconds, "seconds").format("hh:mm:ss");
   return (
     <View style={styles.item}>
       <Text style={styles.title}>{item.name}</Text>
-      <Text style={styles.subtitle}>Duration: {duration}</Text>
+      <Text style={styles.subtitle}>Duration: {formatSec(item.duration)}</Text>
       <Text style={styles.subtitle}>Difficulty: {item.difficulty}</Text>
     </View>
   );
