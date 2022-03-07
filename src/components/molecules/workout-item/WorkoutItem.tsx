@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 20,
-    fontFamily: "nunito-bold",
+    fontFamily: "nunitoBold",
     fontWeight: "700",
   },
   subtitle: {
